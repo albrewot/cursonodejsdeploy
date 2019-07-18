@@ -1,8 +1,5 @@
 //Socket
-const socket =
-  process.env.NODE_ENV == "production"
-    ? io.connect(location.origin)
-    : io.connect("http://localhost:4001");
+const socket = io.connect(location.origin);
 
 let user;
 let room = 0;
