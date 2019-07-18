@@ -4,9 +4,9 @@ require("dotenv").config();
 // console.log(`mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/test`);
 // mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/test`, {
 mongoose.connect(
-  `mongodb+srv://${process.env.DB_USER}:${
-    process.env.DB_PASSWORD
-  }@cursonode-yulba.mongodb.net/test?retryWrites=true&w=majority`,
+  `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${
+    process.env.DB_HOST
+  }`,
   {
     useCreateIndex: true,
     useNewUrlParser: true

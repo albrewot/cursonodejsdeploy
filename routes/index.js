@@ -8,8 +8,8 @@ const authController = require("../controllers/authController");
 module.exports = app => {
   app.use(userInfo);
 
-  app.get("/", (req, res, next) => {
-    res.redirect("socket");
+  app.get("/", isAuth, (req, res, next) => {
+    res.redirect("login");
   });
 
   //locahost:4000/api/users/*
