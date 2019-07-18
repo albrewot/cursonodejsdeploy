@@ -1,7 +1,7 @@
 //Socket
 const socket =
   process.env.NODE_ENV == "production"
-    ? io.connect(`https://curso-nodejs-it.herokuapp.com:${process.env.PORT}`)
+    ? io.connect(location.origin)
     : io.connect("http://localhost:4001");
 
 let user;
