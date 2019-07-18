@@ -1,5 +1,8 @@
 //Socket
-const socket = io.connect("http://localhost:4001");
+const socket =
+  process.env.NODE_ENV == "production"
+    ? io.connect(`https://curso-nodejs-it.herokuapp.com:${process.env.PORT}`)
+    : io.connect("http://localhost:4001");
 
 let user;
 let room = 0;
@@ -26,7 +29,7 @@ socket.on("USER_EXISTS", response => {
   alert(response);
 });
 
-socket.on("NEW_MESSAGE", (data) => {
+socket.on("NEW_MESSAGE", data => {
   if (user) {
     document.getElementById("message-container").innerHTML +=
       "<p><b>" + data.user + "</b>: " + data.message + "</p>";
